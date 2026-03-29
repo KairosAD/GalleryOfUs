@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Memories 💜</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      background: radial-gradient(circle at top, #6a1bbf, #240046 70%);
+      overflow-x: hidden;
+    }
+
+    /* PASSWORD SCREEN */
+    .lockscreen {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at center, #5a189a, #10002b);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    .lockscreen input {
+      padding: 10px 15px;
+      border-radius: 10px;
+      border: none;
+      margin-top: 10px;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .lockscreen button {
+      margin-top: 10px;
+      padding: 8px 15px;
+      border-radius: 10px;
+      border: none;
+      background: #9d4edd;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* STARS (more visible) */
+    .stars, .stars2 {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background: transparent;
+    }
+
+    .stars::after, .stars2::after {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      box-shadow:
+        5vw 10vh white, 15vw 30vh white, 25vw 80vh white,
+        35vw 20vh white, 45vw 60vh white, 55vw 40vh white,
+        65vw 90vh white, 75vw 50vh white, 85vw 70vh white,
+        95vw 15vh white, 10vw 85vh white, 20vw 55vh white,
+        30vw 35vh white, 40vw 75vh white, 50vw 25vh white,
+        60vw 65vh white, 70vw 45vh white, 80vw 95vh white;
+      animation: twinkle 1.5s infinite alternate;
+    }
+
+    .stars2::after {
+      width: 3px;
+      height: 3px;
+      opacity: 0.8;
+      animation-duration: 2.5s;
+    }
+
+    @keyframes twinkle {
+      from { opacity: 0.2; }
+      to { opacity: 1; }
+    }
+
+    h1 {
+      padding: 20px;
+      font-size: 2.5rem;
+    }
+
+    .letter {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      background: rgba(0,0,0,0.3);
+      border-radius: 15px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- LOCK SCREEN -->
+<div class="lockscreen" id="lockscreen">
+  <h2>Enter Password 💜</h2>
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="checkPassword()">Enter</button>
+</div>
+
+<div class="stars"></div>
+<div class="stars2"></div>
+
+<h1>Our Moments 💜</h1>
+
+<div class="letter">
+  Moments with you never feel ordinary, they’re the kind of memories that quietly stay with me long after they pass. Whether it’s the random laughs, the comfortable silences, or the simple times where we’re doing nothing at all, somehow they all mean more because it’s you I’m sharing them with. And if I’m being honest, these moments with you aren’t just memories to me, they're the kind of moments I want to keep creating, over and over again. Memories that I don't to ever forget and so I I created this website for us 😇 , even if time passes indefinitely , even if millions of years has gone by as long as internet exist hehe. These 25 moments of us together will never be forgotten 
+
+</div>
+
+<div class="gallery">
+  <img src="us1.jpg" onclick="openModal(this.src)">
+  <img src="us2.jpg" onclick="openModal(this.src)">
+  <img src="us3.jpg" onclick="openModal(this.src)">
+  <img src="us4.jpg" onclick="openModal(this.src)">
+  <img src="us5.jpg" onclick="openModal(this.src)">
+  <img src="us6.jpg" onclick="openModal(this.src)">
+  <img src="us7.jpg" onclick="openModal(this.src)">
+  <img src="us8.jpg" onclick="openModal(this.src)">
+  <img src="us9.jpg" onclick="openModal(this.src)">
+  <img src="us10.jpg" onclick="openModal(this.src)">
+  <img src="us11.jpg" onclick="openModal(this.src)">
+  <img src="us12.jpg" onclick="openModal(this.src)">
+  <img src="us13.jpg" onclick="openModal(this.src)">
+  <img src="us14.jpg" onclick="openModal(this.src)">
+  <img src="us15.jpg" onclick="openModal(this.src)">
+  <img src="us16.jpg" onclick="openModal(this.src)">
+  <img src="us17.jpg" onclick="openModal(this.src)">
+  <img src="us18.jpg" onclick="openModal(this.src)">
+  <img src="us19.jpg" onclick="openModal(this.src)">
+  <img src="us20.jpg" onclick="openModal(this.src)">
+  <img src="us21.jpg" onclick="openModal(this.src)">
+  <img src="us22.jpg" onclick="openModal(this.src)">
+  <img src="us23.jpg" onclick="openModal(this.src)">
+  <img src="us24.jpg" onclick="openModal(this.src)">
+  <img src="us25.jpg" onclick="openModal(this.src)">
+</div>
+
+<div class="modal" id="modal" onclick="closeModal()">
+  <img id="modalImg">
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+const correctPassword = "MyClover";
+
+function checkPassword() {
+  const input = document.getElementById('password').value;
+  if (input === correctPassword) {
+    document.getElementById('lockscreen').style.display = 'none';
+
+    // Play music after unlocking
+    const music = document.getElementById('bgMusic');
+    music.play();
+  } else {
+    alert('Wrong password 💔');
+  }
+}
+
+function openModal(src) {
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modalImg');
+  modal.style.display = 'flex';
+  modalImg.src = src;
+}
+
+function closeModal() {
+  document.getElementById('modal').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
